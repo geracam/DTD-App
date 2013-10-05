@@ -15,7 +15,7 @@ if (Ti.version < 1.8 ) {
 	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');
 }
 var dtd={};
-
+var SERVER="http://dtd.scripts.mit.edu/mobile/index.php";
 dtd.ctr = {};
 dtd.ui = {};
 dtd.len={};
@@ -32,20 +32,23 @@ dtd.len.shorterDim = {};
 
 dtd.len.longerDim = {};
 
-for (var i = 1; 100 >= i; i++) {
-    dtd.len.shorterDim["p" + i] = shorterDim * i / 100;
-    dtd.len.longerDim["p" + i] = longerDim * i / 100;
+for (var i = 1; 1000 >= i; i++) {
+    dtd.len.shorterDim["p" + i] = shorterDim * i / 1000;
+    dtd.len.longerDim["p" + i] = longerDim * i / 1000;
 }
 
 
 Titanium.include("app/controllers/homeWindowController.js");
 Titanium.include("app/views/homeWindow.js");
+Titanium.include("app/controllers/loginController.js");
+Titanium.include("app/views/login.js")
+Titanium.include("app/controllers/menuWindowController.js");
+Titanium.include("app/views/menuWindow.js");
 
 
 
 
 
+//dtd.ctr.homeWindow.setupHomeWindow();
 
-dtd.ctr.homeWindow.setupHomeWindow();
-
-
+dtd.ctr.loginController.setuploginWindow();
